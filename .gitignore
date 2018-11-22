@@ -1,2 +1,8 @@
 /sass/.sass-cache
 .idea/
+node_modules
+npm-debug.log
+RELEASE_MESSAGE*
+test/socialfeedm.js
+test/socialfeedt.js
+test*.html
