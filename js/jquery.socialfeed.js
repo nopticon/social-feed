@@ -8,8 +8,6 @@ if (typeof Object.create !== 'function') {
 
 (function($, window, document, undefined) {
     $.fn.socialfeed = function(_options) {
-
-
         var defaults = {
             plugin_folder: '', // a folder in which the plugin is located (with a slash in the end)
             template: 'template.html', // a path to the template file
@@ -19,6 +17,7 @@ if (typeof Object.create !== 'function') {
             date_format: 'll',
             date_locale: 'en'
         };
+
         //---------------------------------------------------------------------------------
         var options = $.extend(defaults, _options),
             container = $(this),
@@ -199,15 +198,17 @@ if (typeof Object.create !== 'function') {
                 });
             },
             getTemplate: function(callback) {
+                var dot = require("dot");
+
                 if (Feed.template)
                     return callback();
                 else {
                     if (options.template_html) {
-                        Feed.template = doT.template(options.template_html);
+                        Feed.template = dot.template(options.template_html);
                         return callback();
                     } else {
                         $.get(options.template, function(template_html) {
-                            Feed.template = doT.template(template_html);
+                            Feed.template = dot.template(template_html);
                             return callback();
                         });
                     }
@@ -219,7 +220,8 @@ if (typeof Object.create !== 'function') {
                 api: 'http://api.tweecool.com/',
 
                 getData: function(account) {
-
+                    var Codebird = require("codebird");
+                    
                     var cb = new Codebird();
                     cb.setConsumerKey(options.twitter.consumer_key, options.twitter.consumer_secret);
 
