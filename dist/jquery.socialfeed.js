@@ -219,8 +219,6 @@
                 api: 'http://api.tweecool.com/',
 
                 getData: function (account) {
-                    var Codebird = require("codebird");
-
                     var cb = new Codebird();
                     cb.setConsumerKey(options.twitter.consumer_key, options.twitter.consumer_secret);
 
