@@ -19,7 +19,7 @@
   "contributors": [
     "Guillermo Azurdia <info@nopticon.com> (https://nopticon.com/)"
   ],
-  "main": "js/jquery.socialfeed.js",
+  "main": "dist/jquery.socialfeed.js",
   "directories": {
     "example": "examples"
   },
@@ -28,7 +28,7 @@
     "url": "https://github.com/nopticon/social-feed.git"
   },
   "scripts": {
-    "build-cb": "babel js/jquery.socialfeed.js -o socialfeed.js",
+    "build-cb": "babel js/jquery.socialfeed.js -o dist/jquery.socialfeed.js",
     "build-cbt": "babel test/socialfeedt.es7.js -o test/socialfeedt.js",
     "build-cbm": "babel test/socialfeedm.es7.js -o test/socialfeedm.js",
     "build": "npm run build-cb && npm run build-cbt && npm run build-cbm",
@@ -36,10 +36,8 @@
     "test": "npm run build && npm run test-run"
   },
   "dependencies": {
-    "child_process": "^1.0.2",
-    "codebird": "~2.6.0",
+    "codebird": "~2.5.0",
     "dot": "~1.1.2",
-    "fs": "0.0.1-security",
     "jquery": "~2.1.1",
     "moment": "~2.8.3"
   },
