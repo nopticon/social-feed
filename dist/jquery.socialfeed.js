@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 (function (factory, jQuery) {
 
     if (typeof define === 'function' && define.amd) {
